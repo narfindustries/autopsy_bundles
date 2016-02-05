@@ -17,13 +17,13 @@ Create dir on host that is mounted/shared r/w by the VM, you'll need it later.
 SDK 7.1 comes with VS 2010, but not any newer VS versions. So, if you are using a more recent Visual Studio version, then you have to also install Windows SDK 7.1.
 - Download and install SDK 7.1: http://msdn.microsoft.com/en-us/windowsserver/bb980924.aspx
 - Download and install SDK 7.1 update: https://www.microsoft.com/en-us/download/details.aspx?id=4422
-- add the SDK 7.1 bins to PATH:
--- Append this C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE to the PATH environment variable.
+- add the SDK 7.1 bins to PATH
+	- Append this C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE to the PATH environment variable.
 
 ## Install Chocolatey and some terminal tools ##
 - cinst git ant Cygwin cyg-get python3 python2
--- ant MUST be ver. >= 1.7.1
--- get cygwin64 (64bit)
+	- ant MUST be ver. >= 1.7.1
+	- get cygwin64 (64bit)
 
 ## Install Oracle Java 8 JDK 64bit ##
 You can do this manually by getting it from Oracle's website, or use cinst to get it.
@@ -45,7 +45,7 @@ Download libewf_64bit and place it next to bzip2 and zlib
 
 Build libewf_64bit
 - Open with Visual Studio (msvcpp/libewf.sln)
--- When you open it, it may ask you to convert the project to Visual Studio 2013, say YES. Else it won't work.
+	- When you open it, it may ask you to convert the project to Visual Studio 2013, say YES. Else it won't work.
 - Set to x64 and Release in Configuration Manager
 - Build libewf_dll
 - Set Windows Environment Varaible LIBEWF_HOME to the libewf_64bit dir.
@@ -68,7 +68,7 @@ Build libvmdk_64bit
 - When you open it, it will ask you to convert the project to VS 2013, SAY NO!!!!
 - Set to x64 and Release in Configuration Manager
 - Set WINVER
--- in libvmdk/common/config_winapi.h:26, copy the "#define WINVER" line and paste it below the comment block (uncomment it)
+	- in libvmdk/common/config_winapi.h:26, copy the "#define WINVER" line and paste it below the comment block (uncomment it)
 - Build libvmdk
 - Set Windows Environment Variable LIBVMDK_HOME to the libvmdk_64bit/libvmdk dir.
 
@@ -91,7 +91,7 @@ Download TSK
 
 Build TSK
 - Open with Visual Studio (win32/tsk-win.sln)
--- When you open it, it may ask you to convert it to Visual Studio 2013, say YES. (Note: it should also work if you say NO provided the vs projects are set to use the VS 2010 libs (win sdk7.1))
+	- When you open it, it may ask you to convert it to Visual Studio 2013, say YES. (Note: it should also work if you say NO provided the vs projects are set to use the VS 2010 libs (win sdk7.1))
 - Set to x64 and Release_PostgreSQL in Configuration Manager
 - Build the libtsk_jni solution
 
