@@ -17,8 +17,8 @@ Create dir on host that is mounted/shared r/w by the VM, you'll need it later.
 SDK 7.1 comes with VS 2010, but not any newer VS versions. So, if you are using a more recent Visual Studio version, then you have to also install Windows SDK 7.1.
 - Download and install SDK 7.1: http://msdn.microsoft.com/en-us/windowsserver/bb980924.aspx
 - Download and install SDK 7.1 update: https://www.microsoft.com/en-us/download/details.aspx?id=4422
-- add the SDK 7.1 bins to PATH
-	- Append this C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE to the PATH environment variable.
+- Append the SDK 7.1 bins location to the PATH:
+	- `C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE` 
 
 ## Install Chocolatey and some terminal tools ##
 - cinst git ant Cygwin cyg-get python3 python2
@@ -72,18 +72,18 @@ Build libvmdk_64bit
 - Build libvmdk
 - Set Windows Environment Variable LIBVMDK_HOME to the libvmdk_64bit/libvmdk dir.
 
-
-## Setup TheSleuthKit ##
-
-Download and install PostgreSQL 9.4 or above. You can either download
-the full installer or just the ZIP file. The official releases are from:
-http://www.postgresql.org/download/
+Download and install PostgreSQL 9.4 or above. 
+- You can either download the full installer or just the ZIP file. The official releases are from: http://www.postgresql.org/download/
 - Need 64 bit version to create 64 bit TSK and Autopsy
+- The PostgreSQL server/service does not need to be running on your host unless you plan to use it in Autopsy, so go ahead and stop it and prevent it from starting at boot if you want.
 
 Set Windowns Environment Variable
 - set POSTGRESQL_HOME_64=C:\Program Files\PostgreSQL\9.4
 
 Logout/Login to set all new ENV vars which are now needed to build TSK
+
+
+## Setup TheSleuthKit ##
 
 Download TSK
 - git clone git://github.com/sleuthkit/sleuthkit.git
