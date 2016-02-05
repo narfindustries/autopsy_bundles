@@ -10,27 +10,32 @@ Create dir on host that is mounted/shared r/w by the VM, you'll need it later.
 - This share should have around 8-10GB of space.
 
 ## Install Visual Studio 2013 ##
-- 2010 Express works too and doesn't require the project conversion step
-- you just need the C/C++ components, no need for OS dev or SQL stuff.
-Install Windows SDK 7.1 (this come with VS 2010, but not any newer versions)
-- if not installing VS 2010, then you have to also install Windows SDK 7.1
-- SDK: http://msdn.microsoft.com/en-us/windowsserver/bb980924.aspx
-- SDK update: https://www.microsoft.com/en-us/download/details.aspx?id=4422
-- add SDK bins to PATH:
--- Add to PATH C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE
+- Visual Studio 2010 Express works too, since the source projects are all pre-configured to use 2010, and it doesn't require the project conversion step when building the build targets.
+- Note: you just need the C/C++ components, no need for OS dev or MS SQL stuff.
 
-## Install Oracle Java 8 JDK 64bit ##
-- Edit windows Environment variables to set JAVA_HOME and JDK_HOME to your JDK directory
-Install Chocolatey and some terminal tools
+## Install Windows SDK 7.1 ##
+SDK 7.1 comes with VS 2010, but not any newer VS versions. So, if you are using a more recent Visual Studio version, then you have to also install Windows SDK 7.1.
+- Download and install SDK 7.1: http://msdn.microsoft.com/en-us/windowsserver/bb980924.aspx
+- Download and install SDK 7.1 update: https://www.microsoft.com/en-us/download/details.aspx?id=4422
+- add the SDK 7.1 bins to PATH:
+-- Append this C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE to the PATH environment variable.
+
+## Install Chocolatey and some terminal tools ##
 - cinst git ant Cygwin cyg-get python3 python2
 -- ant MUST be ver. >= 1.7.1
 -- get cygwin64 (64bit)
+
+## Install Oracle Java 8 JDK 64bit ##
+You can do this manually by getting it from Oracle's website, or use cinst to get it.
+- cinst jdk8
+- Edit windows Environment variables to set JAVA_HOME and JDK_HOME to your JDK directory
 
 ## Setup TheSleuthKit Dependencies ##
 
 Download zlib source from http://www.zlib.net and unzip it.
 - Rename the dir to zlib.
 - Do not need to build it.
+
 Download bzip2 source from http://www.bzip2.org and unzip it next to zlib.
 - Rename the dir to bzip2.
 - Do not need to build it.
